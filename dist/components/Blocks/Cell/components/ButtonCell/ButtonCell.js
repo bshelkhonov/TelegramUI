@@ -8,7 +8,6 @@ import { classNames } from "../../../../../helpers/classNames";
 import { hasReactNode } from "../../../../../helpers/react/node";
 import { usePlatform } from "../../../../../hooks/usePlatform";
 import { Tappable } from "../../../../Service/Tappable/Tappable";
-import { Subheadline } from "../../../../Typography/Subheadline/Subheadline";
 import { Text } from "../../../../Typography/Text/Text";
 /**
  * Renders an interactive cell component with optional leading and trailing elements. Designed to be flexible,
@@ -23,7 +22,6 @@ import { Text } from "../../../../Typography/Text/Text";
         "Component"
     ]);
     const platform = usePlatform();
-    const Typography = platform === 'ios' ? Subheadline : Text;
     return /*#__PURE__*/ _jsxs(Tappable, _object_spread_props(_object_spread({
         ref: ref,
         Component: Component || 'button',
@@ -31,7 +29,7 @@ import { Text } from "../../../../Typography/Text/Text";
     }, restProps), {
         children: [
             hasReactNode(before) && before,
-            hasReactNode(children) && /*#__PURE__*/ _jsx(Typography, {
+            hasReactNode(children) && /*#__PURE__*/ _jsx(Text, {
                 children: children
             }),
             hasReactNode(after) && after
